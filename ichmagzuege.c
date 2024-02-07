@@ -13,6 +13,8 @@ double max_speeds[ARRAY_SIZE]= { 100, 80 , 30 , 50 , 45 , 50 , 75 , 50  };
 //double distances[ARRAY_SIZE] = { 1.7, 0.4, 1.3, 0.2, 0.2, 0.8, 0.1 };
 //double max_speeds[ARRAY_SIZE] = { 100, 80 , 50 , 45 , 50 , 75 , 50 };
 
+//Hiiiiii
+
 double calculate_time();
 void adjust_speed_limits();
 
