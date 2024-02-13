@@ -26,6 +26,7 @@ int main()
 		max_speeds[i] /= 3.6;
 		distances[i] *= 1000;
 	}
+
 	adjust_speed_limits(distances, max_speeds);
 	printf("%lf", calculate_time(distances, max_speeds));
 }
