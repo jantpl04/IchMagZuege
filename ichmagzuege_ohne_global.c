@@ -14,7 +14,7 @@
 
 //Hiiiiii
 
-double calculate_time(double*, double*);
+double calculate_time(double[], double[]);
 void adjust_speed_limits(double*, double*);
 
 int main()
@@ -30,7 +30,7 @@ int main()
 	printf("%lf", calculate_time(distances, max_speeds));
 }
 
-double calculate_time(double* distances, double* max_speeds)
+double calculate_time(double distances[], double max_speeds[])
 {
 	double time = 0, current_time, current_speed = max_speeds[0], current_distance, acceleration_time, next_speed = 0;
 	char x = 0;
