@@ -21,5 +21,8 @@
     <ClCompile Include="hannah.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="ichmagzuege_ohne_global.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
