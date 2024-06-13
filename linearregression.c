@@ -12,21 +12,24 @@ int main()
     double senstemp[2000], sensvalue[2000];
 
     FILE* f_offsetfile, *f_sensitivityfile;
-    f_offsetfile = fopen("OffsetRawData.txt", "r"); //Dateizeiger um die Dateien aufzumachen
-    f_sensitivityfile = fopen("SensitivityRawData.txt", "r");
+    //f_offsetfile = fopen("OffsetRawData.txt", "r"); //Dateizeiger um die Dateien aufzumachen
+    //f_sensitivityfile = fopen("SensitivityRawData.txt", "r");
+
+    fopen_s(&f_offsetfile, "OffsetRawData.txt", "r"); // --> fopen_s Funktion für Visual Studio, mit fopen_s gehts nur z.B. in VS Code
+    fopen_s(&f_sensitivityfile, "SensitivityRawData.txt", "r"); // --> fopen_s Funktion für Visual Studio, mit fopen_s gehts nur z.B. in VS Code
 
 
     //daten aus dateien einlesen
     int n_offset = 0, n_sens = 0, j = 1; // n_offset und n_sens sind jeweils die Anzahlen der gelesenen Werte, wenn fscanf ne 0 zurückgibt wurde das Ende vom File erreicht und man hört auf einzulesen
     while(n_offset<2000 && j > 0){
-        j = fscanf(f_offsetfile, "%lf %lf", &offsettemp[n_offset], &offsetvalue[n_offset]); //Jeweils eine Zeile einlesen und in die Richtigen Arrays speichern
+        j = fscanf_s(f_offsetfile, "%lf %lf", &offsettemp[n_offset], &offsetvalue[n_offset]); //Jeweils eine Zeile einlesen und in die Richtigen Arrays speichern
         n_offset++;
     }
     n_offset--; // Auch wenn beim letzten Mal j = 0 wird und man aufhört zu lesen wird fälschlicherweise nochmal inkrementiert, das muss ausgeglichen werden
     j = 1; 
     
     while(n_sens<2000 && j > 0){
-        j = fscanf(f_sensitivityfile, "%lf %lf", &senstemp[n_sens], &sensvalue[n_sens]); //Jeweils eine Zeile einlesen und in die Richtigen Arrays speichern
+        j = fscanf_s(f_sensitivityfile, "%lf %lf", &senstemp[n_sens], &sensvalue[n_sens]); //Jeweils eine Zeile einlesen und in die Richtigen Arrays speichern
         n_sens++;
     }
     n_sens--; //siehe n_offset--;
