@@ -11,12 +11,12 @@ int main()
     double offsettemp[2000], offsetvalue[2000]; //jeweils ein Array für die Temperaturen und die Sensorwerte
     double senstemp[2000], sensvalue[2000];
 
-    FILE* f_offsetfile, *f_sensitivityfile;
-    //f_offsetfile = fopen("OffsetRawData.txt", "r"); //Dateizeiger um die Dateien aufzumachen
+    FILE* f_offsetfile, *f_sensitivityfile; //Dateizeiger um die Dateien aufzumachen
+    //f_offsetfile = fopen("OffsetRawData.txt", "r");
     //f_sensitivityfile = fopen("SensitivityRawData.txt", "r");
 
-    fopen_s(&f_offsetfile, "OffsetRawData.txt", "r"); // --> fopen_s Funktion für Visual Studio, mit fopen_s gehts nur z.B. in VS Code
-    fopen_s(&f_sensitivityfile, "SensitivityRawData.txt", "r"); // --> fopen_s Funktion für Visual Studio, mit fopen_s gehts nur z.B. in VS Code
+    fopen_s(&f_offsetfile, "OffsetRawData.txt", "r"); // --> fopen_s Funktion für Visual Studio, mit fopen gehts nur z.B. in VS Code
+    fopen_s(&f_sensitivityfile, "SensitivityRawData.txt", "r"); // --> fopen_s Funktion für Visual Studio, mit fopen gehts nur z.B. in VS Code
 
 
     //daten aus dateien einlesen
